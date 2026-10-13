@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteBase /tugas_pkl_2/
+
+# Jangan redirect file/folder yang memang benar-benar ada
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Semua request diarahkan ke index.php
+RewriteRule ^ index.php [QSA,L]
